@@ -1,0 +1,59 @@
+//
+//  DummyData.swift
+//  Unifind
+//
+//  Created by Chaniru Sandive on 2025-06-03.
+//
+
+// storing all the dummy data here
+
+import Foundation
+
+struct DummyData {
+    
+    // sample lectures
+    // ---------------
+    static let sampleLectures: [Lecture] = [
+        Lecture(
+            courseName: "Data Structures",
+            startTime: Calendar.current.date(bySettingHour: 9, minute: 0, second: 0, of: Date())!,
+            endTime: Calendar.current.date(bySettingHour: 10, minute: 0, second: 0, of: Date())!,
+            hall: "A101"
+        ),
+        Lecture(
+            courseName: "Operating Systems",
+            startTime: Calendar.current.date(bySettingHour: 15, minute: 0, second: 0, of: Date())!,
+            endTime: Calendar.current.date(bySettingHour: 16, minute: 0, second: 0, of: Date())!,
+            hall: "B202"
+        )
+    ]
+    
+    // sample area heat data
+    // ---------------------
+    static let sampleAreaHeatData: [AreaHeat] = [
+        AreaHeat(symbol: "building.columns", name: "Library Plaza", heat: 25),
+        AreaHeat(symbol: "tram.fill",        name: "Main Quad",     heat: 55),
+        AreaHeat(symbol: "leaf",             name: "Garden Area",   heat: 75),
+        AreaHeat(symbol: "flame.fill",       name: "Cafeteria",     heat: 95)
+    ]
+    
+    // sample area data
+    // ----------------
+    
+    static let sampleAreas: [Area] = [
+        Area(
+            name: "Computer Lab – 01",
+            imageName: "ComputerLab01",    
+            isOpen: true,
+            heat: 26,
+            type: .reservable
+        ),
+        Area(
+            name: "iOS Lab – 01",
+            imageName: "IosLab01",
+            isOpen: true,
+            heat: 45,
+            type: .reservable
+        )
+    ]
+}
