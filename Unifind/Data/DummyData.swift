@@ -42,6 +42,7 @@ struct DummyData {
     
     static let sampleAreas: [Area] = [
         Area(
+            svgID: "room_computer_lab_01",
             name: "Computer Lab – 01",
             imageName: "ComputerLab01",    
             isOpen: true,
@@ -49,6 +50,7 @@ struct DummyData {
             type: .reservable
         ),
         Area(
+            svgID: "room_ios_lab_01",
             name: "iOS Lab – 01",
             imageName: "IosLab01",
             isOpen: true,
@@ -56,4 +58,19 @@ struct DummyData {
             type: .reservable
         )
     ]
+    
+    // room ids by floor
+    // -----------------
+    
+    static let roomIdsByFloor: [[String]] = [
+        // Floor 0 (Ground)
+        ["room_lecture_hall_01", "room_lecture_hall_02"],
+
+        // Floor 1 (First)
+        ["room_study_area_01", "room_office_03", "room_office_04"],
+
+        // Floor 2 (Second)
+        ["room_lecture_hall_09", "room_program_office", "room_library", "room_study_area_02"]
+    ]
+    
 }

@@ -15,6 +15,7 @@ enum AreaType {
 
 struct Area: Identifiable {
     let id = UUID()
+    let svgID: String
     let name: String
     let imageName: String
     let isOpen: Bool

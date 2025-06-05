@@ -21,7 +21,6 @@ struct QuickBookButton: View {
                         .fill(.themePrimary.opacity(0.1))
                 )
         }
-        .buttonStyle(.plain)
     }
 }
 

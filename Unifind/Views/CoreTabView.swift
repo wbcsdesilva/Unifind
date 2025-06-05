@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CoreTabView: View {
     @EnvironmentObject private var authVM: AuthViewModel
+    @State private var selectedRoomID: String? = nil
 
     var body: some View {
         TabView {
@@ -25,10 +26,11 @@ struct CoreTabView: View {
                 }
 
             // 3) Map
-            MapView()
+            InteractiveMapView()
                 .tabItem {
                     Label("Map", systemImage: "map")
                 }
+            
 
             // 4) Heat
             HeatView()
