@@ -17,7 +17,6 @@ struct HomeView: View {
     @EnvironmentObject private var authVM: AuthViewModel
     
     @State private var lectures: [Lecture] = DummyData.sampleLectures
-    private let areaHeatData: [AreaHeat] = DummyData.sampleAreaHeatData
     private let areas: [Area] = DummyData.sampleAreas
     
     // ongoing, then upcoming
@@ -58,8 +57,8 @@ struct HomeView: View {
                     .padding(.horizontal)
 
                 VStack(spacing: 12) {
-                    ForEach(areaHeatData) { areaHeat in
-                        AreaHeatRow(area: areaHeat)
+                    ForEach(areas) { area in
+                        AreaHeatRow(area: area)
                             .padding(.horizontal)
                     }
                 }

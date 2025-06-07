@@ -9,40 +9,48 @@ import SwiftUI
 
 struct CoreTabView: View {
     @EnvironmentObject private var authVM: AuthViewModel
-    @State private var selectedRoomID: String? = nil
-
+    
     var body: some View {
         TabView {
             // 1) Home
-            HomeView()
-                .tabItem {
-                    Label("Home", systemImage: "house")
-                }
+            NavigationStack {
+                HomeView()
+            }
+            .tabItem {
+                Label("Home", systemImage: "house")
+            }
 
             // 2) Find
-            FindView()
-                .tabItem {
-                    Label("Find", systemImage: "magnifyingglass")
-                }
+            NavigationStack {
+                FindView()
+            }
+            .tabItem {
+                Label("Find", systemImage: "magnifyingglass")
+            }
 
             // 3) Map
-            InteractiveMapView()
-                .tabItem {
-                    Label("Map", systemImage: "map")
-                }
-            
+            NavigationStack {
+                InteractiveMapView()
+            }
+            .tabItem {
+                Label("Map", systemImage: "map")
+            }
 
             // 4) Heat
-            HeatView()
-                .tabItem {
-                    Label("Heat", systemImage: "flame.fill")
-                }
+            NavigationStack {
+                HeatView()
+            }
+            .tabItem {
+                Label("Heat", systemImage: "flame.fill")
+            }
 
             // 5) Settings
-            SettingsView()
-                .tabItem {
-                    Label("Settings", systemImage: "gearshape")
-                }
+            NavigationStack {
+                SettingsView()
+            }
+            .tabItem {
+                Label("Settings", systemImage: "gearshape")
+            }
         }
     }
 }
@@ -51,4 +59,5 @@ struct CoreTabView: View {
     CoreTabView()
         .environmentObject(AuthViewModel())
         .tint(.themePrimary)
+    
 }
