@@ -9,9 +9,21 @@ import SwiftUI
 
 @main
 struct UnifindApp: App {
+    
+    @StateObject private var authVM = AuthViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Group {
+                if authVM.isLoggedIn {
+                    NavigationStack{
+                        CoreTabView().environmentObject(authVM)
+                    }
+                } else {
+                    LoginView(authVM: authVM)
+                }
+            }
+            .tint(Color(.themePrimary))
         }
     }
 }
