@@ -59,7 +59,7 @@ struct LectureCard: View {
 
                     Spacer()
                     
-                    QuickNavButton()
+                    QuickNavButton(action: {})
                 }
                 .padding(.top, 8)
             }

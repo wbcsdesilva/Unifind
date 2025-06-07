@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct QuickNavButton: View {
+    
+    let action: () -> Void
+    
     var body: some View {
-        Button(action: {}) {
+        Button(action: action) {
             Label("Go", systemImage: "location.fill")
                 .font(.subheadline)
                 .cornerRadius(8)

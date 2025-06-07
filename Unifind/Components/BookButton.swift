@@ -1,29 +1,32 @@
 //
-//  QuickBookButton.swift
+//  BookButton.swift
 //  Unifind
 //
-//  Created by Chaniru Sandive on 2025-06-03.
+//  Created by Chaniru Sandive on 2025-06-06.
 //
 
 import SwiftUI
 
-struct QuickBookButton: View {
+struct BookButton: View {
+    
+    let action: () -> Void
     
     var body: some View {
-        Button(action: {}) {
+        Button(action: action) {
             Label("Book", systemImage: "calendar.badge.checkmark")
-                .font(.subheadline)
+                .font(.headline)
                 .foregroundColor(.accentColor)
-                .padding(.vertical, 6)
-                .padding(.horizontal, 12)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical)
                 .background(
                     RoundedRectangle(cornerRadius: 8, style: .continuous)
                         .fill(.regularMaterial)
                 )
         }
+        .buttonStyle(.plain)
     }
 }
 
 #Preview {
-    QuickBookButton()
+    BookButton(action: {})
 }

@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct AreaHeatRow: View {
-    let area: AreaHeat
+    let area: Area
 
     var body: some View {
         HStack {
-            // Icon + area name
             Label {
                 Text(area.name)
                     .font(.body)
@@ -23,16 +22,8 @@ struct AreaHeatRow: View {
 
             Spacer()
 
-            // Heat percent inside a colored capsule
-            Text(area.heatLabelText)
-                .font(.subheadline).bold()
-                .foregroundColor(area.heatColor.labelTextColor)
-                .padding(.horizontal, 8)
-                .padding(.vertical, 4)
-                .background(
-                    Capsule()
-                        .fill(area.heatColor.background)
-                )
+            HeatPill(area: area)
+            
         }
         .padding()
         .background(
@@ -44,10 +35,10 @@ struct AreaHeatRow: View {
 
 #Preview {
     VStack(spacing: 12) {
-        AreaHeatRow(area: AreaHeat(symbol: "building.columns", name: "Library Plaza", heat: 25))
-        AreaHeatRow(area: AreaHeat(symbol: "tram.fill",       name: "Main Quad",     heat: 55))
-        AreaHeatRow(area: AreaHeat(symbol: "leaf",            name: "Garden Area",   heat: 75))
-        AreaHeatRow(area: AreaHeat(symbol: "flame.fill",      name: "Cafeteria",     heat: 95))
+        AreaHeatRow(area: allAreas[0])
+        AreaHeatRow(area: allAreas[1])
+        AreaHeatRow(area: allAreas[2])
+        AreaHeatRow(area: allAreas[3])
     }
     .padding()
 }

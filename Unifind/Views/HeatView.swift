@@ -8,12 +8,29 @@
 import SwiftUI
 
 struct HeatView: View {
+    
+    private let areaData: [Area] = allAreas
+    
     var body: some View {
-        VStack {
-            Text("Heat Screen")
-                .font(.title2)
-            Spacer()
+        
+        ScrollView {
+            VStack {
+                // list
+                VStack(spacing: 12) {
+                    ForEach(areaData) { areaHeat in
+                        AreaHeatRow(area: areaHeat)
+                    }
+                }
+            }
+            .padding()
         }
-        .padding()
+        .navigationTitle("Heat Levels")
+        
+    }
+}
+
+#Preview {
+    NavigationStack {
+        HeatView()
     }
 }
