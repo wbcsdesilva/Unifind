@@ -66,9 +66,10 @@ struct AreaCard: View {
                         QuickBookButton()
                     }
                     
-                    QuickNavButton()
+                    QuickNavButton(action: {})
                     
                 }
+                
 
                 Spacer(minLength: 0) // push up
             }
